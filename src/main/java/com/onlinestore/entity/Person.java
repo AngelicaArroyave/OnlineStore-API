@@ -26,39 +26,39 @@ public class Person implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idPerson")
-	private Long idPerson;
+	private int idPerson;
 	
-	@Column(name = "name", nullable = false)
+	@Column(name = "name", nullable = false, length = 45)
 	private String name;
 	
-	@Column(name = "lastname", nullable = false)
+	@Column(name = "lastname", nullable = false, length = 45)
 	private String lastname;
 	
-	@Column(name = "identification", nullable = false)
+	@Column(name = "identification", nullable = false, length = 15)
 	private String identification;
 	
-	@Column(name = "phone", nullable = false)
+	@Column(name = "phone", nullable = false, length = 15)
 	private String phone;
 	
 	@DateTimeFormat(pattern = "%Y-%m-%d")
 	@Column(name = "birthdate", nullable = false)
 	private Date birthdate;
 	
-	@Column(name = "country", nullable = false)
+	@Column(name = "country", nullable = false, length = 20)
 	private String country;
 	
-	@Column(name = "city", nullable = false)
+	@Column(name = "city", nullable = false, length = 20)
 	private String city;
 	
 	@ManyToOne
-	@JoinColumn(name = "fk_idLogin", referencedColumnName = "idLogin")
+	@JoinColumn(name = "idLogin", referencedColumnName = "idLogin")
 	private Login idLogin;
 
-	public Long getIdPerson() {
+	public int getIdPerson() {
 		return idPerson;
 	}
 
-	public void setIdPerson(Long idPerson) {
+	public void setIdPerson(int idPerson) {
 		this.idPerson = idPerson;
 	}
 
