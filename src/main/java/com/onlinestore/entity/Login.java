@@ -25,23 +25,23 @@ public class Login implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idLogin")
-	private Long idLogin;
+	private int idLogin;
 	
-	@Column(name = "email", nullable = false)
+	@Column(name = "email", nullable = false, length = 100)
 	private String email;
 	
-	@Column(name = "password", nullable = false)
+	@Column(name = "password", nullable = false, length = 10)
 	private String password;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "role", nullable = false)
 	private Role role;
 
-	public Long getIdLogin() {
+	public int getIdLogin() {
 		return idLogin;
 	}
 
-	public void setIdLogin(Long idLogin) {
+	public void setIdLogin(int idLogin) {
 		this.idLogin = idLogin;
 	}
 
